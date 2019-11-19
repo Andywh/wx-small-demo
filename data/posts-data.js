@@ -16,7 +16,7 @@ var local_database = [
           url: "http://music.163.com/song/media/outer/url?id=142604.mp3",
             title: "夜夜夜夜-齐秦",
             coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000"
-        }
+        },
     },
     {
         title: "比利·林恩的中场故事",
@@ -87,7 +87,7 @@ var local_database = [
         headImgSrc: "/images/post/vr.png",
         author: "深白色",
         date: "Nov 20 2016",
-        avatar: "../../../images/avatar/3.png",
+        avatar: "/images/avatar/3.png",
         postId: 4,
         music: {
           url: "http://music.163.com/song/media/outer/url?id=188204.mp3",
@@ -106,7 +106,7 @@ var local_database = [
         headImgSrc: "/images/iqiyi.png",
         author: "深白色",
         date: "Nov 20 2016",
-        avatar: "../../../images/avatar/5.png",
+        avatar: "/images/avatar/5.png",
         postId: 5,
         music: {
           url: "http://music.163.com/song/media/outer/url?id=152428.mp3",

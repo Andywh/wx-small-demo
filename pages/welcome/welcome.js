@@ -3,7 +3,7 @@ Page({
 
     onTap: function () {
         console.log('onTap')
-        wx.navigateTo({
+        wx.redirectTo({
             url:'../posts/posts'
         })
     },
