@@ -4,7 +4,7 @@
         <view class="inner-container">
             <view class="movie-head">
                 <text class="slogan">{{cagetoryTitle}}</text>
-                <view class="more">
+                <view catchtap="onMoreTap" class="more" data-category="{{cagetoryTitle}}">
                     <text class="more-text">更多</text>
                     <image class="arrow-img" src="/images/icon/arrow-right.png"></image>
                 </view>
@@ -14,8 +14,6 @@
                     <template is="movieTemplate" data="{{...movie}}"/>
                 </block>
             </view>
-
-
         </view>
     </view>
 </template>

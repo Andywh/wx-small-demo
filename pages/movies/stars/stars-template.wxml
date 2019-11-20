@@ -5,11 +5,6 @@
                 <image wx:if="{{i}}" class="star-img" src="/images/icon/star.png"></image>
                 <image wx:else="{{i}}" class="star-img" src="/images/icon/none-star.png"></image>
             </block>
-<!--            <image class="star-img" src="/images/icon/star.png"></image>-->
-<!--            <image class="star-img" src="/images/icon/star.png"></image>-->
-<!--            <image class="star-img" src="/images/icon/star.png"></image>-->
-<!--            <image class="star-img" src="/images/icon/star.png"></image>-->
-<!--            <image class="star-img" src="/images/icon/star.png"></image>-->
         </view>
         <text class="star-score">{{score}}</text>
     </view>

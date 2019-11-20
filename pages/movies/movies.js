@@ -40,7 +40,6 @@ Page({
                 that.processDoubanData(res.data, settedKey, cagetoryTitle)
             },
         })
-
     },
 
     processDoubanData: function (moviesDouban, settedKey, cagetoryTitle) {
@@ -66,11 +65,18 @@ Page({
           movies: movies
         }
         this.setData(readyData)
-        console.log('readyData', readyData)
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
+
+    onMoreTap: function(event) {
+        var category = event.currentTarget.dataset.category;
+        wx.navigateTo({
+            url: "more-movie/more-movie?category=" + category
+        })
+    },
+
     onReady: function () {
 
     },
