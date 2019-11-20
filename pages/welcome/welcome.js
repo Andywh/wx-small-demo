@@ -3,7 +3,7 @@ Page({
 
     onTap: function () {
         console.log('onTap')
-        wx.redirectTo({
+        wx.switchTab({
             url:'../posts/posts'
         })
     },
