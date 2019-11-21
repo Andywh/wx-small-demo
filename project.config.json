@@ -72,6 +72,14 @@
 					"id": -1,
 					"name": "pages/movies/more-movie/more-movie",
 					"pathName": "pages/movies/more-movie/more-movie",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/movies/movie-detail/movie-detail",
+					"pathName": "pages/movies/movie-detail/movie-detail",
+					"query": "id=169",
 					"scene": null
 				}
 			]

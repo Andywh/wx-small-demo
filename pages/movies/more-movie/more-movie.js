@@ -106,8 +106,18 @@ Page({
         console.log("onPullDownRefresh")
         var refreshUrl = this.data.requestUrl + "?start=0&count=20"
         this.data.movies = []
+        this.data.totalCount = 0
         util.http(refreshUrl, this.processDoubanData)
         wx.showNavigationBarLoading()
+    },
+
+    onMovieTap: function(event) {
+        // var category = event.currentTarget.dataset.category;
+        console.log("onMovieTap")
+        var movieId = event.currentTarget.dataset.movieid;
+        wx.navigateTo({
+            url: "../movie-detail/movie-detail?id="+movieId
+        })
     },
 
     /**

@@ -10,9 +10,12 @@ Page({
      * 页面的初始数据
      */
     data: {
-      inTheaters: {},
-      comingSoon: {},
-      top250: {}
+        inTheaters: {},
+        comingSoon: {},
+        top250: {},
+        searchResult: {},
+        containerShow: true,
+        searchPanelShow: false
     },
 
     /**
@@ -28,6 +31,15 @@ Page({
         this.getMovieListData(top250Url, "top250", "豆瓣top250")
     },
 
+    onMovieTap: function(event) {
+        // var category = event.currentTarget.dataset.category;
+        console.log("onMovieTap")
+        var movieId = event.currentTarget.dataset.movieid;
+        wx.navigateTo({
+            url: "movie-detail/movie-detail?id="+movieId
+        })
+    },
+
     getMovieListData: function (url, settedKey, cagetoryTitle) {
         var that = this
         wx.request({
@@ -40,6 +52,27 @@ Page({
                 that.processDoubanData(res.data, settedKey, cagetoryTitle)
             },
         })
+    },
+
+    onCancelImgTap: function (event) {
+        this.setData({
+            containerShow: true,
+            searchPanelShow: false
+        })
+    },
+
+    onBindFocus: function (event) {
+        console.log("onBindFocus")
+        this.setData({
+            containerShow: false,
+            searchPanelShow: true
+        })
+    },
+
+    onBindConfirm: function (event) {
+        var text = event.detail.value
+        var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text
+        this.getMovieListData(searchUrl, "searchResult", "")
     },
 
     processDoubanData: function (moviesDouban, settedKey, cagetoryTitle) {
@@ -61,8 +94,8 @@ Page({
         }
         var readyData = {}
         readyData[settedKey] = {
-          cagetoryTitle: cagetoryTitle,
-          movies: movies
+            cagetoryTitle: cagetoryTitle,
+            movies: movies
         }
         this.setData(readyData)
     },
@@ -70,56 +103,11 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
 
-    onMoreTap: function(event) {
+    onMoreTap: function (event) {
         var category = event.currentTarget.dataset.category;
         wx.navigateTo({
             url: "more-movie/more-movie?category=" + category
         })
     },
 
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    }
 })
